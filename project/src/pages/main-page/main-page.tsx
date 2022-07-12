@@ -1,7 +1,7 @@
 import HotelCard from '../../components/hotel-card';
 
 type MainPageProps = {
-  hotelsCount: number;
+  hotelsCount: number[];
 }
 
 const MainPage = ({hotelsCount}: MainPageProps): JSX.Element => (
@@ -77,7 +77,7 @@ const MainPage = ({hotelsCount}: MainPageProps): JSX.Element => (
         <div className="cities__places-container container">
           <section className="cities__places places">
             <h2 className="visually-hidden">Places</h2>
-            <b className="places__found">312 places to stay in Amsterdam</b>
+            <b className="places__found">{hotelsCount.length} places to stay in Amsterdam</b>
             <form className="places__sorting" action="#" method="get">
               <span className="places__sorting-caption">Sort by</span>
               <span className="places__sorting-type" tabIndex={0}>
@@ -94,11 +94,7 @@ const MainPage = ({hotelsCount}: MainPageProps): JSX.Element => (
               </ul>
             </form>
             <div className="cities__places-list places__list tabs__content">
-              {HotelCard()}
-              {HotelCard()}
-              {HotelCard()}
-              {HotelCard()}
-              {HotelCard()}
+              {hotelsCount.map((e) => <HotelCard key={e} />)}
             </div>
           </section>
           <div className="cities__right-section">

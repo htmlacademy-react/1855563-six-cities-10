@@ -1,7 +1,7 @@
 import MainPage from '../../pages/main-page/main-page';
 
 type AppScreenProps = {
-  hotelsCount: number;
+  hotelsCount: number[];
 }
 
 const App = ({hotelsCount}: AppScreenProps): JSX.Element => (
