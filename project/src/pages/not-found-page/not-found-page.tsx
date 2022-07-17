@@ -1,19 +1,14 @@
 import {Link} from 'react-router-dom';
-import Logo from '../../components/logo/logo';
+import Header from '../../components/header/header';
+import styles from './not-found.module.css';
 
 const NotFound = (): JSX.Element => (
-  <div className="page page--gray page--login">
-    <header className="header">
-      <div className="container">
-        <div className="header__wrapper">
-          <Logo />
-        </div>
-      </div>
-    </header>
-    <main className="page__main page__main--login">
+  <div className={styles.pageNotFound}>
+    <Header isFull={false} />
+    <main className={styles.pageMainNotFound}>
       <div className="not-found">
-        <h1>404. Page not found</h1>
-        <Link to="/">Вернуться на главную</Link>
+        <h1 className={styles.title}>404. Page not found</h1>
+        <Link className={styles.link} to="/">click to go to main</Link>
       </div>
     </main>
   </div>

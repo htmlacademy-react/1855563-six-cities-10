@@ -3,7 +3,7 @@ import { AppRoute, AuthorizeStatus } from '../../const';
 import MainPage from '../../pages/main-page/main-page';
 import LoginPage from '../../pages/login-page/login-page';
 import FavoritesPage from '../../pages/favorite-page/favorites-page';
-import PropertyPage from '../../pages/property-page/property-page';
+import OfferPage from '../../pages/offer-page/offer-page';
 import NotFound from '../../pages/not-found-page/not-found-page';
 import PrivateRoute from '../../components/private-route/private-route';
 
@@ -27,15 +27,15 @@ const App = ({hotelsCount}: AppScreenProps): JSX.Element => (
         path={AppRoute.Favorites}
         element={
           <PrivateRoute
-            authorizeStatus={AuthorizeStatus.NoAuth}
+            authorizeStatus={AuthorizeStatus.Auth}
           >
             <FavoritesPage />
           </PrivateRoute>
         }
       />
       <Route
-        path={AppRoute.Room}
-        element={<PropertyPage />}
+        path={AppRoute.Offer}
+        element={<OfferPage />}
       />
       <Route
         path="*"
